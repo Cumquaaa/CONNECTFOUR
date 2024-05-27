@@ -1,7 +1,7 @@
 #include "Judge.h"
 
 bool userWin(const int x, const int y, const int M, const int N, int* const* board){
-	//ºáÏò¼ì²â
+	//æ¨ªå‘æ£€æµ‹
     int i, j;
     int count = 0;
     for (i = y; i >= 0; i--)
@@ -14,7 +14,7 @@ bool userWin(const int x, const int y, const int M, const int N, int* const* boa
     count += (i - y - 1);
     if (count >= 4) return true;
 
-    //×İÏò¼ì²â
+    //çºµå‘æ£€æµ‹
     count = 0;
     for (i = x; i < M; i++)
         if (!(board[i][y] == 1))
@@ -22,7 +22,7 @@ bool userWin(const int x, const int y, const int M, const int N, int* const* boa
     count += (i - x);
     if (count >= 4) return true;
 
-    //×óÏÂ-ÓÒÉÏ
+    //å·¦ä¸‹-å³ä¸Š
     count = 0;
     for (i = x, j = y; i < M && j >= 0; i++, j--)
         if (!(board[i][j] == 1))
@@ -34,7 +34,7 @@ bool userWin(const int x, const int y, const int M, const int N, int* const* boa
     count += (j - y - 1);
     if (count >= 4) return true;
 
-    //×óÉÏ-ÓÒÏÂ
+    //å·¦ä¸Š-å³ä¸‹
     count = 0;
     for (i = x, j = y; i >= 0 && j >= 0; i--, j--)
         if (!(board[i][j] == 1))
@@ -50,7 +50,7 @@ bool userWin(const int x, const int y, const int M, const int N, int* const* boa
 }
 
 bool machineWin(const int x, const int y, const int M, const int N, int* const* board){
-	//ºáÏò¼ì²â
+	//æ¨ªå‘æ£€æµ‹
     int i, j;
     int count = 0;
     for (i = y; i >= 0; i--)
@@ -63,7 +63,7 @@ bool machineWin(const int x, const int y, const int M, const int N, int* const* 
     count += (i - y - 1);
     if (count >= 4) return true;
 
-    //×İÏò¼ì²â
+    //çºµå‘æ£€æµ‹
     count = 0;
     for (i = x; i < M; i++)
         if (!(board[i][y] == 2))
@@ -71,7 +71,7 @@ bool machineWin(const int x, const int y, const int M, const int N, int* const* 
     count += (i - x);
     if (count >= 4) return true;
 
-    //×óÏÂ-ÓÒÉÏ
+    //å·¦ä¸‹-å³ä¸Š
     count = 0;
     for (i = x, j = y; i < M && j >= 0; i++, j--)
         if (!(board[i][j] == 2))
@@ -83,7 +83,7 @@ bool machineWin(const int x, const int y, const int M, const int N, int* const* 
     count += (j - y - 1);
     if (count >= 4) return true;
 
-    //×óÉÏ-ÓÒÏÂ
+    //å·¦ä¸Š-å³ä¸‹
     count = 0;
     for (i = x, j = y; i >= 0 && j >= 0; i--, j--)
         if (!(board[i][j] == 2))
